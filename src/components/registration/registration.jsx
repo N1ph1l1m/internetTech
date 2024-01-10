@@ -50,13 +50,40 @@ function Registration (){
             default: 
         }
     }
+  
     function handleSubmit(){
-        if(user !== "" && email !== "" && pass1 !== "" && pass2 !== ""){
-            setMsg("success");
-        }else{
-            setError("All field are required");
-        }
-    }
+      if(user !== "" && email !== "" && pass1 !== "" && pass2 !== ""){
+        var url = "http://macbook-air-vlad.local/react-task/registration.php";
+          var headers = {
+              "Accept": "application/json",
+              "Content-Type": "application/json"
+          };
+          var Data = {
+              user: user,
+              email: email,
+              pass: pass2
+          }
+          fetch(url, {
+              method: "POST",
+              headers: headers,
+              body: JSON.stringify(Data)
+          }).then((response) => response.json())
+          .then((response) => {
+            setMsg(response[0].result)
+            //console.log(response);
+          }).catch((err) =>{
+            setError(err)
+              console.log(err);
+          });
+          setUser("");
+          setEmail("");
+          setPass1("");
+          setPass2("");
+      }
+      else{
+          setError("All fields are required!");
+      }
+  }
 
 
     return(
