@@ -1,0 +1,22 @@
+.wrap_container{
+    width: 500px;
+    border:1px solid red;
+    padding: 50px;
+}
+
+.wrap2{
+    border:1px solid green;
+}
+
+.titleReg{
+    font-size: 30px;
+    text-align: center;
+
+}
+.form-outline{
+    border:1px solid red;
+}
+
+.form-check{
+    border:1px solid red;
+}

@@ -1,4 +1,9 @@
 import React, { useEffect, useState } from "react";
+import Input from "../input/input";
+
+import './registration.css';
+
+
 
 function Registration() {
   const [user, setUser] = useState("");
@@ -140,20 +145,9 @@ function Registration() {
 
   return (
     <>
-      <section
-        className="vh-100 bg-image"
-        style={{
-          backgroundImage:
-            'url("https://images.unsplash.com/photo-1495195129352-aeb325a55b65")',
-        }}
-      >
-        <div className="mask d-flex align-items-center h-100 gradient-custom-3">
-          <div className="container h-100">
-            <div className="row d-flex justify-content-center align-items-center h-100">
-              <div className="col-12 col-md-9 col-lg-7 col-xl-6">
-                <div className="card" style={{ borderRadius: 15 }}>
-                  <div className="card-body p-5">
-                    <h2 className="text-uppercase text-center mb-5">
+      <section>
+          <div className="wrap_container">
+                    <h2 className="titleReg">
                       Create an account
                     </h2>
                     <p>
@@ -163,49 +157,47 @@ function Registration() {
                         <span className="error">{error}</span>
                       )}
                     </p>
-                    <div className="form-outline mb-4">
-                      <input
+                      <Input
                         type="text"
                         name="user"
-                        className="form-control form-control-lg"
+                        label = 'Your User Name'
                         value={user}
                         onChange={(e) => handleInputChange(e, "user")}
                         onBlur={checkUser}
-                      />
-                      <label className="form-label">Your User Name</label>
-                    </div>
-                    <div className="form-outline mb-4">
-                      <input
+                        />   
+                      <Input
                         type="email"
                         name="email"
-                        className="form-control form-control-lg"
+                        label='Your Email'
                         value={email}
                         onChange={(e) => handleInputChange(e, "email")}
                         onBlur={checkEmail}
-                      />
-                      <label className="form-label">Your Email</label>
-                    </div>
-                    <div className="form-outline mb-4">
-                      <input
+                      />   
+
+                        <Input
                         type="password"
                         name="pass1"
-                        className="form-control form-control-lg"
+                        label='Password'
                         value={pass1}
                         onChange={(e) => handleInputChange(e, "pass1")}
                         onBlur={checkPassword}
-                      />
-                      <label className="form-label">Password</label>
-                    </div>
-                    <div className="form-outline mb-4">
-                      <input
+                        />
+
+                        <Input
                         type="password"
                         name="pass2"
-                        className="form-control form-control-lg"
+                        label='Repeat your password'
                         value={pass2}
                         onChange={(e) => handleInputChange(e, "pass2")}
-                      />
-                      <label className="form-label">Repeat your password</label>
-                    </div>
+                        onBlur={checkPassword}
+                        />
+                      {/* <Input
+                        type="checkbox"
+                        defaultValue
+                        id="form2Example3cg"
+                        label='I agree all statements in'
+                      /> */}
+
                     <div className="form-check d-flex justify-content-center mb-5">
                       <input
                         className="form-check-input me-2"
@@ -223,6 +215,7 @@ function Registration() {
                         </a>
                       </label>
                     </div>
+                    
                     <div className="d-flex justify-content-center">
                       <input
                         type="submit"
@@ -238,11 +231,6 @@ function Registration() {
                       </a>
                     </p>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
     </>
   );

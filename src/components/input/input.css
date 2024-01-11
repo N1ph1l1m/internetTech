@@ -3,7 +3,9 @@
     height: 40px;
     width: 100%;
     padding: 12px;
-    border: 1px solid #EBEBEB;
+    border: 1px solid #d7d4d4;
+    border-radius: 5px;
+    margin-bottom: 10px;
   }
   
   .input[disabled] {
@@ -27,9 +29,9 @@
   
   .inputRequired,
   .inputLabel {
-    font-weight: 600;
-    font-size: 10px;
-    text-transform: uppercase;
+    font-size: 18px;
+    text-align: center;
+    margin: 0 auto;
   }
   
   .inputError {
