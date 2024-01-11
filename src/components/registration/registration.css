@@ -1,22 +1,31 @@
-.wrap_container{
-    width: 500px;
-    border:1px solid red;
-    padding: 50px;
+.wrap_container {
+  max-width: 500px;
+  padding: 50px;
 }
 
-.wrap2{
-    border:1px solid green;
+.wrap2 {
+  border: 1px solid green;
 }
 
-.titleReg{
-    font-size: 30px;
-    text-align: center;
-
+.titleReg {
+  font-size: 30px;
+  text-align: center;
 }
-.form-outline{
-    border:1px solid red;
+.form-outline {
+  border: 1px solid red;
 }
 
-.form-check{
-    border:1px solid red;
+.checkAccount {
+  margin: 0 auto;
+  width: 400px;
+  height: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-check {
+  margin-top: 9px;
+  width: 30px;
+  cursor: pointer;
 }

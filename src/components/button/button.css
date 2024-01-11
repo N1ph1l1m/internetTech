@@ -1,35 +1,35 @@
 .btn {
   /* padding: 10px 15px; */
-  background-color: #7CC6fE;
-  border: 3px solid black;
-  color: #FFF;
+  background-color: #726aba;
+  border: 1px solid rgb(215, 213, 213);
+  color: #fff;
   font-weight: 600;
   cursor: pointer;
   text-transform: uppercase;
   display: inline-block;
   text-decoration: none;
-  /* margin-bottom: 13px; */
   width: 150px;
-  margin:0px auto;
-  
+  margin: 0px auto;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .btn:hover {
-  background-color: #70B4E6;
+  background-color: #70b4e6;
 }
 
 .btn[disabled] {
-  opacity: .5;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
 .btn.active {
-  background-color: #23C9FF;
-  border: 1px solid #5EB2F2;
-  box-shadow: 0px 0 2px 0px #C0C0C0;
+  background-color: #23c9ff;
+  border: 1px solid #5eb2f2;
+  box-shadow: 0px 0 2px 0px #c0c0c0;
 }
 
-.newWidth{
+.newWidth {
   width: 320px;
-  background-color:cadetblue;
+  background-color: cadetblue;
 }
