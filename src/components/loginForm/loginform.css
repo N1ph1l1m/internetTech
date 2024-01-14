@@ -1,6 +1,7 @@
 .wrap_container {
   max-width: 500px;
   padding: 50px;
+  border: 1px solid green;
 }
 
 .wrap2 {
@@ -28,4 +29,8 @@
   margin-top: 9px;
   width: 30px;
   cursor: pointer;
+}
+
+.newSize{
+  width:350px;
 }

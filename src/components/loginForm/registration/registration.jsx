@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Input from "../input/input";
-import Button from "../button/button";
+import Input from "../../input/input";
+import Button from "../../button/button";
 
-import "./registration.css";
+import "../loginform.css";
 
 function Registration() {
   const [user, setUser] = useState("");
@@ -157,15 +157,15 @@ function Registration() {
           <Input
             type="text"
             name="user"
-            label="Your User Name"
             value={user}
             onChange={(e) => handleInputChange(e, "user")}
             onBlur={checkUser}
+            placeholder="Username"
           />
           <Input
             type="email"
             name="email"
-            label="Your Email"
+            placeholder="Email"
             value={email}
             onChange={(e) => handleInputChange(e, "email")}
             onBlur={checkEmail}
@@ -174,7 +174,7 @@ function Registration() {
           <Input
             type="password"
             name="pass1"
-            label="Password"
+            placeholder="Password"
             value={pass1}
             onChange={(e) => handleInputChange(e, "pass1")}
             onBlur={checkPassword}
@@ -183,34 +183,23 @@ function Registration() {
           <Input
             type="password"
             name="pass2"
-            label="Repeat your password"
+            placeholder="Repeat password"
             value={pass2}
             onChange={(e) => handleInputChange(e, "pass2")}
             onBlur={checkPassword}
+            text="pass"
           />
 
-          <div className="checkAccount">
-            <Input
-              type="checkbox"
-              defaultValue
-              className="form-check"
-              id="form2Example3cg"
-            />
-            <span>
-              I agree all statements in{" "}
-              <a href="#!">
-                <u>Terms of service</u>
-              </a>
-            </span>
-          </div>
-
-          <Button type="submit" onClick={handleSubmit}>Submit</Button>
-          <p className="textAccount">
-            Have already an account?{" "}
-            <a href="#!">
-              <u>Login here</u>
-            </a>
-          </p>
+          <Button type="submit" onClick={handleSubmit}
+            className="newSize">
+            Get started
+          </Button>
+          <br />
+          <Button type="submit"
+            className="newSize"
+             >
+            Already have account? Log in
+          </Button>
         </div>
       </section>
     </>
