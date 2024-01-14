@@ -4,7 +4,7 @@ import Button from "../../button/button";
 
 import "../loginform.css";
 
-function Registration() {
+function Registration(props) {
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [pass1, setPass1] = useState("");
@@ -197,6 +197,7 @@ function Registration() {
           <br />
           <Button type="submit"
             className="newSize"
+            onClick={props.switchElem}
              >
             Already have account? Log in
           </Button>

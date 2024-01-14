@@ -3,7 +3,7 @@ import Input from "../../input/input";
 import Button from "../../button/button";
 
 import '../loginform.css'
-function Login(){
+function Login(props){
     // const [user, setUser] = useState("");
     // const [email, setEmail] = useState("");
     // const [pass, setPass1] = useState("");
@@ -51,7 +51,8 @@ function Login(){
             Log in
           </Button>
           <br />
-          <Button type="submit" className="newSize">
+          <Button type="submit" className="newSize"
+             onClick={props.switchElem}>
             Don't have an account? Sign Up
           </Button>
         </div>
