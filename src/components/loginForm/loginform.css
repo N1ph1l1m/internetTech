@@ -1,7 +1,14 @@
-.wrap_container {
+.wrap_container{
+  margin: 0px  auto ;
+}
+.item_container {
   max-width: 500px;
-  height: 45  0px;
+  height: 450px;
   padding: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+ 
 }
 
 .wrap2 {
@@ -9,8 +16,10 @@
 }
 
 .titleReg {
-  font-size: 30px;
+  font-size: 34px;
+  font-weight: 900;
   text-align: center;
+  color:#3d474d;
 }
 .form-outline {
   border: 1px solid red;
@@ -32,5 +41,20 @@
 }
 
 .newSize{
+  margin-top:10px;
   width:350px;
+  padding: 10px;
+  text-transform: uppercase;
+  background-color:#0af;
+  font-weight: bold;
+}
+.switchState{
+  color:#0af;
+  font-size: 18px;
+  font-weight: 900;
+  cursor:pointer;
+  float:right;
+  position: absolute;
+  right: 50px;
+  top:30px;
 }

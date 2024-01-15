@@ -145,8 +145,8 @@ function Registration(props) {
   return (
     <>
       <section>
-        <div className="wrap_container">
-          <h2 className="titleReg">Create an account</h2>
+        <div className="item_container">
+          <h1 className="titleReg">Register</h1>
           <p>
             {msg !== "" ? (
               <span className="success">{msg}</span>
@@ -195,12 +195,6 @@ function Registration(props) {
             Get started
           </Button>
           <br />
-          <Button type="submit"
-            className="newSize"
-            onClick={props.switchElem}
-             >
-            Already have account? Log in
-          </Button>
         </div>
       </section>
     </>

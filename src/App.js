@@ -3,31 +3,22 @@ import "./App.css";
 import styled from "styled-components";
 import LoginForm from "./components/loginForm/loginform";
 
+
 const WrapApp = styled.div`
-  width: 1200px;
-  border: 3px black solid;
-  margin: 50px auto;
+  height:800px;
+  margin: 20px auto;
   display: flex;
   justify-content: space-between;
-`;
-const LeftBlock = styled.div`
-  width: 700px;
-  border: 3px solid blue;
-  background-color: #726aba;
+  align-items:center;
+  ${'' /* border: 3px black solid; */}
 `;
 
-// const RightBlock = styled.div`
-//   width:500px;
-//   height:500px;
-//   border: 1px solid black;
-//   background-color:#326aba;
-// `
 function App() {
   return (
     <div className="App">
       <WrapApp>
-        <LeftBlock></LeftBlock>
-        {/* <RightBlock/> */}
+        {/* <LeftBlock></LeftBlock>
+        <RightBlock/> */}
         <LoginForm/>
       </WrapApp>
     </div>

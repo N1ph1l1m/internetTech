@@ -81,8 +81,13 @@ function Login(props){
     return(
         <>
           <section>
-        <div className="wrap_container">
-          <h2 className="titleReg">Log in to your Account</h2>
+          {/* <span className="switchState"
+             onClick={props.switchElem}>
+            Register
+          </span> */}
+          <div className="wrap_container">
+          <div className="item_container">
+          <h1 className="titleReg">Login</h1>
           <p>
             {msg !== "" ? (
               <span className="success">{msg}</span>
@@ -109,14 +114,13 @@ function Login(props){
             className="newSize"
           onClick={loginSubmit}
           >
-            Log in
+            Login
           </Button>
           <br />
-          <Button type="submit" className="newSize"
-             onClick={props.switchElem}>
-            Don't have an account? Sign Up
-          </Button>
+          
         </div>
+          </div>
+       
       </section>
         </>
     )
