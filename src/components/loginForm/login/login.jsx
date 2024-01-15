@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Input from "../../input/input";
 import Button from "../../button/button";
+//import {useNavigate} from 'react-router-dom';
 
 import '../loginform.css'
 function Login(props){
-     const [user, setUser] = useState("");
-     const [email, setEmail] = useState("");
+ // const naviget = useNavigate();
+    
+    const [email, setEmail] = useState("");
     const [pass, setPass1] = useState("");
     const [error, setError] = useState("");
-
     const [msg, setMsg] = useState("");
 
     useEffect(() => {
@@ -19,13 +20,6 @@ function Login(props){
 
     const handleInputChange = (e, type) => {
         switch (type) {
-          case "user":
-            setError("");
-            setUser(e.target.value);
-            if (e.target.value === "") {
-              setError("User has left blank");
-            }
-            break;
           case "email":
             setError("");
             setEmail(e.target.value);
@@ -33,7 +27,7 @@ function Login(props){
               setError("Email has left blank");
             }
             break;
-          case "pass1":
+          case "pass":
             setPass1("");
             setPass1(e.target.value);
             if (e.target.value === "") {
@@ -44,9 +38,10 @@ function Login(props){
         }
       };
 
-      function handleSubmit() {
+      function loginSubmit() {
         if (email !== "" && pass !== "") {
-           var url = "http://macbook-air-vlad.local/react-task/chekaccount.php";
+      
+           var url = "http://macbook-air-vlad.local/react-task/login.php";
           var headers = {
             Accept: "application/json",
             "Content-Type": "application/json",
@@ -62,10 +57,17 @@ function Login(props){
           })
             .then((response) => response.json())
             .then((response) => {
-              setMsg(response[0].result);
-              console.log(response);
-            })
-            .catch((err) => {
+              if(response[0].result === "Invalid email" || response[0].result === "Invalid passsword"){
+                setError(response[0].result);  
+              }else{
+                setMsg(response[0].result);
+                  setTimeout(function(){
+                    localStorage.setItem("login",true);
+                    localStorage.setItem('email',email);
+                   //naviget("/dashboard")
+                  },5000);
+                }
+            }).catch((err) => {
               setError(err);
               console.log(err);
             });
@@ -90,25 +92,22 @@ function Login(props){
           </p>
           
           <Input
-            type="email"
-            name="email"
+            type="text"
+            id="email"
             placeholder="Email"
             value={email}
             onChange={(e) => handleInputChange(e, "email")}
-            //onBlur={checkEmail}
           />
-
           <Input
             type="password"
-            name="pass1"
+            id="pass"
             placeholder="Password"
             value={pass}
-            onChange={(e) => handleInputChange(e, "pass1")}
-            //onBlur={checkPassword}
+            onChange={(e) => handleInputChange(e, "pass")}
           />
           <Button type="submit" 
             className="newSize"
-          onClick={handleSubmit}
+          onClick={loginSubmit}
           >
             Log in
           </Button>

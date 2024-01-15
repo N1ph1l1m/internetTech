@@ -1,7 +1,6 @@
 import React, {useState}from "react";
 import Registration from "./registration/registration";
 import Login from "./login/login";
-
 import styled from "styled-components";
 
 
