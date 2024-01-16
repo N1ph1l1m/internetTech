@@ -9,9 +9,9 @@
     min-width: 300px;
   }
   
-  .list-group-item:not(:last-child) {
+  /* .list-group-item:not(:last-child) {
     border-bottom: none;
-  }
+  } */
   
   .list-group-item.active {
     background-color: #23C9FF;

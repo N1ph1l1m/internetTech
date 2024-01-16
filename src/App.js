@@ -1,7 +1,9 @@
 import React from "react";
 import "./App.css";
 import styled from "styled-components";
-import LoginForm from "./components/loginForm/loginform";
+import TaskManager from "./layout/components/taskManager/taskManager";
+//import LoginForm from "../src/layout/components/loginForm/loginform";
+//import Navigator from "./layout/components/navigator/navigator";
 
 
 const WrapApp = styled.div`
@@ -17,9 +19,9 @@ function App() {
   return (
     <div className="App">
       <WrapApp>
-        {/* <LeftBlock></LeftBlock>
-        <RightBlock/> */}
-        <LoginForm/>
+        {/* <LoginForm/> */}
+      {/* <Navigator/> */}
+      <TaskManager/>
       </WrapApp>
     </div>
   );

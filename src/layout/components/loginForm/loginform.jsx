@@ -1,6 +1,6 @@
 import React, {useState}from "react";
-import Registration from "./registration/registration";
-import Login from "./login/login";
+import Registration from "../loginForm/registration/registration";
+import Login from "../loginForm/login/login";
 import styled from "styled-components";
 
 

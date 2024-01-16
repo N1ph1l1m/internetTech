@@ -6,11 +6,11 @@
     align-items: flex-start;
   }
   
-  .list-group > *:first-child {
+  /* .list-group > *:first-child {
     border-radius: 5px 5px 0 0;
   }
   
   .list-group > *:last-child {
     border-radius: 0 0 5px 5px;
-  }
+  } */
   

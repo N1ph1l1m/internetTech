@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Input from "../../input/input";
-import Button from "../../button/button";
+import Input from "../../../../components/input/input";
+import Button from "../../../../components/button/button";
 
 import "../loginform.css";
 
