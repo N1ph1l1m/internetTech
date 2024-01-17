@@ -6,13 +6,11 @@ import styled from "styled-components";
 
 
 const NavigatorWrap = styled.div`
-width:318px;
-height:750px;
-border:1px solid #0af;
+height:100%;
+width:50px;
+border:1px solid black;
 ${'' /* margin-left:100px; */}
-border-radius:10px;
-margin-top:30px;
-background-color: white; 
+background-color:rgb(233, 232, 232);
 `
 function Navigator(){
 

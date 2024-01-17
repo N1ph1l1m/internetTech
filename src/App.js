@@ -7,11 +7,12 @@ import TaskManager from "./layout/components/taskManager/taskManager";
 
 
 const WrapApp = styled.div`
-  height:800px;
-  margin: 20px auto;
-  display: flex;
+  max-width:1920px;
+  height:100%;
+  ${'' /* margin: 20px auto; */}
+  ${'' /* display: flex;
   justify-content: space-between;
-  align-items:center;
+  align-items:center; */}
   ${'' /* border: 3px black solid; */}
 `;
 

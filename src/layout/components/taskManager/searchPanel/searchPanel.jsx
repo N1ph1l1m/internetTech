@@ -12,8 +12,6 @@ background-color:white;
 
 `
 function SearchPanel(){
-
-
     return(
     <SearchWrap>
         <p>Text</p>
