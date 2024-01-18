@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Input from "../../../../components/input/input";
+// import { Link } from "react-router-dom";
 import Button from "../../../../components/button/button";
+import {useNavigate} from 'react-router-dom';
 //import {useNavigate} from 'react-router-dom';
 
 import '../loginform.css'
@@ -11,6 +13,7 @@ function Login(props){
     const [pass, setPass1] = useState("");
     const [error, setError] = useState("");
     const [msg, setMsg] = useState("");
+    const history = useNavigate();
 
     useEffect(() => {
       setTimeout(function () {
@@ -64,8 +67,8 @@ function Login(props){
                   setTimeout(function(){
                     localStorage.setItem("login",true);
                     localStorage.setItem('email',email);
-                   //naviget("/dashboard")
-                  },5000);
+                   history("/task");
+                  },2000);
                 }
             }).catch((err) => {
               setError(err);
@@ -109,7 +112,8 @@ function Login(props){
             placeholder="Password"
             value={pass}
             onChange={(e) => handleInputChange(e, "pass")}
-          />
+          /> 
+
           <Button type="submit" 
             className="newSize"
           onClick={loginSubmit}

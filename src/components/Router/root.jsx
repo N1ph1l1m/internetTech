@@ -6,20 +6,22 @@ import Button from "../button/button";
 
 import "../../../src/index.css";
 const OutletWRap = styled.div`
+  width: 100vw; 
+  height: 100vh; 
 `;
 const MainWrap = styled.div`
-  width: 1900px;
-  border: 3px solid red;
+  width: 100vw; 
+  height: 100vh; 
   display: flex;
 `;
 
 const NavigatorItemWrap = styled.div`
-  width:60px;
-  height: 1000px;
+  width: 60px;
+  height: 100vh;
   position: relative;
   border: 3px solid black;
   background-color: rgb(233, 232, 232);
-  padding:5px;
+  padding: 5px;
 `;
 
 function Root() {
@@ -27,24 +29,24 @@ function Root() {
     <MainWrap>
       <NavigatorItemWrap>
         <Button className="newColor">
-          <Link className="colorLink" to={"/task"}>
+          <Link className="colorLink" to={"taskmanager"}>
             <i class="fa-regular fa-square-check"></i>
           </Link>
         </Button>
 
         <Button className="newColor">
-          <Link className="colorLink" to={"/"}>
+          <Link className="colorLink" to={""}>
             <i class="fa-solid fa-calendar-days"></i>
           </Link>
         </Button>
         <Button className="newColor">
-          <Link className="colorLink" to={"/"}>
+          <Link className="colorLink" to={""}>
             <i class="fa-solid fa-magnifying-glass"></i>
           </Link>
         </Button>
 
         <Button className="newColor">
-          <Link className="colorLink" to={"/"}>
+          <Link className="colorLink" to={""}>
             <i class="fa-solid fa-rotate"></i>
           </Link>
         </Button>

@@ -9,23 +9,42 @@ import {
 } from "react-router-dom";
 import Root from './components/Router/root';
 import ErrorPage from '../src/components/Router/errorPage'
-import SandBoxButton from "../src/components/button/sandBoxButton";
+//import SandBoxButton from "../src/components/button/sandBoxButton";
 import LoginForm from "../src/layout/components/loginForm/loginform";
-import Registration from './layout/components/loginForm/registration/registration';
+// import Registration from './layout/components/loginForm/registration/registration';
 import TaskManager from './layout/components/taskManager/taskManager';
 const router  = createBrowserRouter([
-
   {
     path:"/",
+    element:<LoginForm/>,
+    errorElement:<ErrorPage/>,
+    children:[
+      // {
+      //     path:"/task",
+      //     element:<TaskManager/>
+      // },
+    //   {
+    //     path:"/login",
+    //     element:<LoginForm/>
+    // },
+    ]
+  },  
+  {
+    path:"/task",
     element:<Root/>,
     errorElement:<ErrorPage/>,
     children:[
       {
-          path:"/task",
+          path:"taskmanager",
           element:<TaskManager/>
       },
+    //   {
+    //     path:"/login",
+    //     element:<LoginForm/>
+    // },
     ]
   },  
+  
   ])
 
 

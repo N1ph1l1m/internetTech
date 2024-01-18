@@ -1,6 +1,7 @@
 import React from "react";
-
+import Button from "../../../../components/button/button";
 import NavigatorItem from "./taskNavItem/taskNavItem";
+import {Link } from "react-router-dom";
 import './navigator.css'
 import styled from "styled-components";
 

@@ -1,7 +1,10 @@
 import React from "react";
 import Button from "../../../../../components/button/button";
+import Icon from "../../../../../components/icon/icon"
 import "../navigator.css";
 import styled from "styled-components";
+
+import { RiTaskFill } from "react-icons/ri";
 
 const TaskItemWrap = styled.div`
   height: 980px;
@@ -19,7 +22,9 @@ function TaskNavItem() {
     <TaskItemWrap>
 
         <Button className="taskNav">
-        <i class="fa-solid fa-calendar-day"></i>
+        {/* <i class="fa-solid fa-calendar-day"></i> */}
+        <Icon>   <RiTaskFill size="20"/></Icon>
+     
          Today
         </Button>
       
