@@ -13,9 +13,6 @@
   
 }
 
-.btn:hover {
-  background-color: #70b4e6;
-}
 
 .btn[disabled] {
   opacity: 0.5;
@@ -34,6 +31,35 @@
 }
 
 .newColor{
-  background-color: gray;
+  background-color: transparent;
   margin-bottom: 10px;
+  border:0px solid transparent; 
+  
+}
+.newColor:hover{
+  background-color: #23c9ff;
+}
+.taskNav{
+  border-radius:0px;
+  font-size: 16px;
+  background-color:transparent;
+  border:1px solid transparent;
+  margin-left: 3px;
+  color:black;
+  font-weight: 300;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 170px;
+  border-radius:10px;
+  padding: 0px;
+}
+.taskNav:hover{
+  background-color: #23c9ff;
+ 
+}
+.taskNav> i{
+  margin-right: 5px;
+  width: 50px;
 }

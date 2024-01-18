@@ -3,15 +3,37 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Root from './components/Router/root';
+import ErrorPage from '../src/components/Router/errorPage'
+import SandBoxButton from "../src/components/button/sandBoxButton";
+import LoginForm from "../src/layout/components/loginForm/loginform";
+import Registration from './layout/components/loginForm/registration/registration';
+import TaskManager from './layout/components/taskManager/taskManager';
+const router  = createBrowserRouter([
+
+  {
+    path:"/",
+    element:<Root/>,
+    errorElement:<ErrorPage/>,
+    children:[
+      {
+          path:"/task",
+          element:<TaskManager/>
+      },
+    ]
+  },  
+  ])
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  <BrowserRouter>
-  <App />
-  </BrowserRouter>
-  </React.StrictMode>
+    <RouterProvider router={router}/>
+</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

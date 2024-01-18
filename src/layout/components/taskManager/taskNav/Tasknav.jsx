@@ -1,18 +1,19 @@
 import React from "react";
 
-import NavigatorItem from "./navigatorItem/navigatorItem";
+import NavigatorItem from "./taskNavItem/taskNavItem";
 import './navigator.css'
 import styled from "styled-components";
 
 
 const NavigatorWrap = styled.div`
 height:100%;
-width:50px;
-border:1px solid black;
+width:200px;
+${'' /* border:1px solid black; */}
 ${'' /* margin-left:100px; */}
-background-color:rgb(233, 232, 232);
+background-color:white;
+border-right:1px solid gray;
 `
-function Navigator(){
+function TaskNav(){
 
 
     return(
@@ -22,4 +23,4 @@ function Navigator(){
     )
 }
 
-export default Navigator;
+export default TaskNav;

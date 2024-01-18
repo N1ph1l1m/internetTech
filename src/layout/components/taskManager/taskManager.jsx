@@ -1,16 +1,16 @@
 import React from "react";
 
-import Navigator from "./navigator/navigator";
+import TaskNav from "./taskNav/Tasknav";
 
 
 // import './navigator.css'
 import styled from "styled-components";
 
 const TaskWrap = styled.div`
-width:2000px;
-border:1px solid red;
-left:0px;
-top:0px;
+width:800px;
+border:2px solid blue;
+${'' /* margin-left:5px; */}
+
 
 `
 
@@ -19,11 +19,8 @@ function TaskManager(){
 
     return(
     <TaskWrap>
-        <Navigator/>
-        {/* <ContentWrap>
-        <SearchPanel/>
-        <ContentItem/>
-        </ContentWrap> */}
+        <TaskNav/>
+      
     </TaskWrap>
     )
 }
