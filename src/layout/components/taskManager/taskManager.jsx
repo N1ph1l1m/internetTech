@@ -12,12 +12,8 @@ const TaskWrap = styled.div`
 border:2px solid blue;
 ${'' /* margin-left:5px; */}
 
-
 `
-
 function TaskManager(){
-
-
     return(
     <TaskWrap>
         <TaskNav/>

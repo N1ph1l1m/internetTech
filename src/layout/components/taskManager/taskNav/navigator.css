@@ -1,18 +1,20 @@
-/* .newList{
-    height: 76px;
-    width: ;
-    border:none;
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: 16px;
-    margin-top:20px ;
-   
-   background-color:rgb(233, 232, 232);
-
-
+.leftSide{
+    display: inline;
+    
 }
-.newList:hover{
-    background-color:#0af;
-    color: #FFF;
-    cursor: pointer;   
-} */
+.leftSide> span{
+    margin-left: 5px;
+    cursor: pointer;
+    color:gray;
+}
+i{
+    color:gray;
+}
+
+.textLink{
+    width: 50px;
+   
+}
+.textLink >i{
+    margin-left: 0px;
+}

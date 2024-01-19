@@ -3,11 +3,16 @@ import { Outlet, Link } from "react-router-dom";
 
 import styled from "styled-components";
 import Button from "../button/button";
+import Icon from "../icon/icon";
 
+import { RiTaskFill , } from "react-icons/ri";
+import { FaUser, FaCalendarAlt , FaSearch ,FaSyncAlt } from "react-icons/fa";
+import { ImExit } from "react-icons/im";
 import "../../../src/index.css";
 const OutletWRap = styled.div`
   width: 100vw; 
   height: 100vh; 
+  background-color:white;
 `;
 const MainWrap = styled.div`
   width: 100vw; 
@@ -18,44 +23,63 @@ const MainWrap = styled.div`
 const NavigatorItemWrap = styled.div`
   width: 60px;
   height: 100vh;
-  position: relative;
   border: 3px solid black;
-  background-color: rgb(233, 232, 232);
+  background-color: #e0dede;
   padding: 5px;
+  display:flex;
+  flex-direction:column;
+  align-items: flex-start;
+
 `;
+const ChildNavItem = styled.div`
+margin-top: auto;
+`
 
 function Root() {
   return (
     <MainWrap>
       <NavigatorItemWrap>
+
+      <Button className="newColor">
+          <Link className="colorLink" to={"taskmanager"}>
+            <Icon> <FaUser size={20}/></Icon>
+          </Link>
+        </Button>
+
+
         <Button className="newColor">
           <Link className="colorLink" to={"taskmanager"}>
-            <i class="fa-regular fa-square-check"></i>
+            <Icon> <RiTaskFill size={20}/></Icon>
           </Link>
         </Button>
 
         <Button className="newColor">
-          <Link className="colorLink" to={""}>
-            <i class="fa-solid fa-calendar-days"></i>
+          <Link className="colorLink" to={"calendar"}>
+            <Icon><FaCalendarAlt size={20}/></Icon>
           </Link>
         </Button>
         <Button className="newColor">
           <Link className="colorLink" to={""}>
-            <i class="fa-solid fa-magnifying-glass"></i>
+          <Icon><FaSearch size={20}/></Icon>
           </Link>
         </Button>
 
-        <Button className="newColor">
+      <ChildNavItem>
+      <Button className="newColor ">
           <Link className="colorLink" to={""}>
-            <i class="fa-solid fa-rotate"></i>
+          <Icon><FaSyncAlt  size={20}/></Icon>
           </Link>
         </Button>
 
         <Button className="newColor">
           <Link className="colorLink" to={"/"}>
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <Icon><ImExit size={20}/></Icon>
           </Link>
         </Button>
+      </ChildNavItem>
+      
+    
+    
       </NavigatorItemWrap>
       <OutletWRap>
         <Outlet />

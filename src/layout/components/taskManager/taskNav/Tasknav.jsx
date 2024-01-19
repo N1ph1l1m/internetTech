@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 const NavigatorWrap = styled.div`
 height:100%;
-width:200px;
+width:220px;
 ${'' /* border:1px solid black; */}
 ${'' /* margin-left:100px; */}
 background-color:white;

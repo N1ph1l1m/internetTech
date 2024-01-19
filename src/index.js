@@ -13,6 +13,8 @@ import ErrorPage from '../src/components/Router/errorPage'
 import LoginForm from "../src/layout/components/loginForm/loginform";
 // import Registration from './layout/components/loginForm/registration/registration';
 import TaskManager from './layout/components/taskManager/taskManager';
+import Calendar from './layout/components/taskManager/calendar/calendar';
+import TaskContent from './layout/components/taskManager/taskContent/taskContent';
 const router  = createBrowserRouter([
   {
     path:"/",
@@ -35,13 +37,18 @@ const router  = createBrowserRouter([
     errorElement:<ErrorPage/>,
     children:[
       {
-          path:"taskmanager",
-          element:<TaskManager/>
+          path:"taskmanager/",
+          element:<TaskManager/>,
+          children:[{
+            path:"today",
+            element:<TaskContent/>
+          },]
       },
-    //   {
-    //     path:"/login",
-    //     element:<LoginForm/>
-    // },
+      {
+        path:"calendar",
+        element:<Calendar/>
+    },
+  
     ]
   },  
   
