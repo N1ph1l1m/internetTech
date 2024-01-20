@@ -49,17 +49,18 @@
   font-weight: 300;
   margin-bottom: 5px;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   height: 40px;
-  width: 170px;
+  width: 192px;
   border-radius:10px;
   padding: 0px;
+  
 }
 .taskNav:hover{
-  background-color: #23c9ff;
+  background-color: #f8f8f8;
  
 }
-.taskNav> i{
-  margin-right: 5px;
-  width: 50px;
+.taskNav> span{
+  color:gray;
 }

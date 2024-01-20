@@ -13,7 +13,6 @@ const DropDownItem = styled.div`
   width: 192px;
   height: 30px;
   margin-left: 4px;
-
   display: flex;
   justify-content: space-between;
   padding: 5px;

@@ -12,9 +12,22 @@ i{
 }
 
 .textLink{
-    width: 50px;
-   
+    text-decoration: none;  
+    width: 150px;
+    color:black;
+    font-size: 16px;
+    font-weight: 300;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
-.textLink >i{
-    margin-left: 0px;
+.textLink>span{
+    display: inline-block;
+    width: 80px;
+    text-align: left;
+    
+}
+.textLink:hover{
+    color:gray;
+    text-decoration: none;
 }

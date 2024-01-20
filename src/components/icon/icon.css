@@ -24,3 +24,9 @@
     margin: 0px auto;
   }
   
+  .taskContent{
+    margin-top: 4px;
+  }
+  .taskContent:hover{
+    cursor: pointer;
+  }
