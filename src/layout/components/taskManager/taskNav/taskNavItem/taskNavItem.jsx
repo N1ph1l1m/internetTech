@@ -7,15 +7,14 @@ import DropDown from "./dromDown";
 import styled from "styled-components";
 import { Outlet, Link } from "react-router-dom";
 
-import {RiTaskLine } from "react-icons/ri";
+import { RiTaskLine } from "react-icons/ri";
 import { BsCalendar2Day } from "react-icons/bs";
-import { FaCalendarDay, FaTrash} from "react-icons/fa";
+import { FaCalendarDay, FaTrash } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 
-
 const MainWrap = styled.div`
-  width: 100vw; 
-  height: 100vh; 
+  width: 100vw;
+  height: 100vh;
   display: flex;
 `;
 
@@ -26,16 +25,15 @@ const TaskItemWrap = styled.div`
   justify-content: start;
   flex-direction: column;
   padding-top: 15px;
-  
 `;
 const TaskNav = styled.div`
   height: 120px;
   width: 220px;
   margin-bottom: 10px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding:5px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
 `;
 const BorderBotton = styled.div`
   margin: 5px auto;
@@ -54,89 +52,88 @@ const DropDownContent = styled.div`
   margin-bottom: 5px;
 `;
 const OutletWrap = styled.div`
-width:100vw;
-height:100vh;
-
-`
+  width: 100vw;
+  height: 100vh;
+`;
 
 function TaskNavItem() {
   return (
-   <MainWrap>
-     <TaskItemWrap>
-      <TaskNav>
-      
-      <Button className="taskNav">
-      <Link className="textLink" to={"today"}>
-        <Icon>
-            <FaCalendarDay size="20"/>
-          </Icon>
-          <span>Today</span>
-        </Link>
-      </Button>
-   
-
-        <Button className="taskNav">
-        <Link className="textLink" to={"nextseven"}>
-        <Icon>
-            <BsCalendar2Day size="20" />
-          </Icon>
-          <span>Next 7 Days</span>
-        </Link>
-         
-        </Button>
-
-        <Button className="taskNav">
-        <Link className="textLink" to={"inbox"}>
-        <Icon>
-            <IoIosMail size="20" />
-          </Icon>
-          <span>Inbox</span>
-        </Link>
-         
-        </Button>
-        <BorderBotton />
-      </TaskNav>
-
-      <TaskList>
-        <DropDown
-          text="Work"
-          components={
-            <DropDownContent>
-              <p>Text</p>
-              <p>Text</p>
-            </DropDownContent>
-          }
-        />
-
-        <DropDown text="My tasks" components={<DropDownContent />} />
-        <BorderBotton />
-      </TaskList>
-
-          <TaskNav>
+    <MainWrap>
+      <TaskItemWrap>
+        <TaskNav>
           <Button className="taskNav">
-          <Link className="textLink" to={"completed"}>
-          <Icon>
-            <RiTaskLine size="20"/>
-          </Icon>
-          <span>Completed</span>
-          </Link>
-        </Button>
-
-        <Button className="taskNav">
-        <Link className="textLink" to={"trash"}>
-          <Icon>
-            <FaTrash size="20"/>
-          </Icon>
-          <span>Trash</span>     
-          </Link>
+            <Link className="textLink" to={"today"}>
+              <Icon>
+                <FaCalendarDay size="20" />
+              </Icon>
+              <span>Today</span>
+            </Link>
           </Button>
-          </TaskNav>
-  
-    </TaskItemWrap>
-    <OutletWrap>
-      <Outlet/>
-    </OutletWrap>
-   </MainWrap>
+
+          <Button className="taskNav">
+            <Link className="textLink" to={"nextseven"}>
+              <Icon>
+                <BsCalendar2Day size="20" />
+              </Icon>
+              <span>Next 7 Days</span>
+            </Link>
+          </Button>
+
+          <Button className="taskNav">
+            <Link className="textLink" to={"inbox"}>
+              <Icon>
+                <IoIosMail size="20" />
+              </Icon>
+              <span>Inbox</span>
+            </Link>
+          </Button>
+          <BorderBotton />
+        </TaskNav>
+
+        <TaskList>
+          <Link className="textLinkDrop" to={"work"}>
+            <DropDown
+              text="Work"
+              components={
+                <DropDownContent>
+                  <p>Text</p>
+                  <p>Text</p>
+                </DropDownContent>
+              }
+            />
+          </Link>
+
+          <Link className="textLinkDrop"to={"work"}>
+            <DropDown text="My tasks" components={<DropDownContent />} />
+          </Link>
+
+          <BorderBotton />
+        </TaskList>
+
+        <TaskNav>
+          <Button className="taskNav">
+            <Link className="textLink" to={"completed"}>
+              <Icon>
+                <RiTaskLine size="20" />
+              </Icon>
+              <span>Completed</span>
+            </Link>
+          </Button>
+
+          <Button className="taskNav">
+            <Link className="textLink" to={"trash"}>
+              <Icon>
+                <FaTrash size="20" />
+              </Icon>
+              <span>Trash</span>
+            </Link>
+          </Button>
+        </TaskNav>
+      </TaskItemWrap>
+      <OutletWrap>
+        <Outlet />
+      </OutletWrap>
+    </MainWrap>
   );
 }
 

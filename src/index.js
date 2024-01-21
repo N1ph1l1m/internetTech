@@ -17,6 +17,8 @@ import TaskNestSevenDay from './layout/components/taskManager/taskComponents/tas
 import Inbox from './layout/components/taskManager/taskComponents/Inbox';
 import Completed from './layout/components/taskManager/taskComponents/completed';
 import Trash from './layout/components/taskManager/taskComponents/trash';
+import Work from './layout/components/taskManager/taskComponents/Groups/Work';
+import Mytasks from './layout/components/taskManager/taskComponents/Groups/MyTasks';
 const router  = createBrowserRouter([
   {
     path:"/",
@@ -52,6 +54,14 @@ const router  = createBrowserRouter([
           {
             path:"inbox",
             element:<Inbox/>
+          },
+          {
+            path:"work",
+            element:<Work/>
+          },
+          {
+            path:"mytask",
+            element:<Mytasks/>
           },
           {
             path:"completed",
