@@ -59,7 +59,7 @@ const router  = createBrowserRouter([
           },
           {
             path:"trash",
-            element:<Trash/>
+            element:<Trash title="Trash"/>
           }
           ,]
       },
