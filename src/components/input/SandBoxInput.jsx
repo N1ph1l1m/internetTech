@@ -1,8 +1,6 @@
 import React from 'react';
 import Input from './input';
 
-import styled from "styled-components";
-
 
 
 

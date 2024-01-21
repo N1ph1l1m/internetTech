@@ -31,7 +31,7 @@ const TaskItemWrap = styled.div`
 const TaskNav = styled.div`
   height: 120px;
   width: 220px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -54,7 +54,7 @@ const DropDownContent = styled.div`
   margin-bottom: 5px;
 `;
 const OutletWrap = styled.div`
-width:1000px;
+width:100vw;
 height:100vh;
 border:3px solid green;
 `
