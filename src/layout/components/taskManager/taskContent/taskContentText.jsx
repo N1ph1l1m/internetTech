@@ -65,7 +65,7 @@ function TaskContentText(props) {
   function handleSubmit() {
     setShowModal(false);
   }
-
+  
   function showText() {
     if (!showModal) {
       const task = textTask;

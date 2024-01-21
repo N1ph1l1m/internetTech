@@ -103,7 +103,7 @@ function TaskNavItem() {
             />
           </Link>
 
-          <Link className="textLinkDrop"to={"work"}>
+          <Link className="textLinkDrop"to={"mytask"}>
             <DropDown text="My tasks" components={<DropDownContent />} />
           </Link>
 

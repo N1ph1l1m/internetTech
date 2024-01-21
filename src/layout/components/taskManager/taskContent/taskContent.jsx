@@ -52,12 +52,73 @@ function TaskContent(props) {
     }
   };
 
-  const handleInputEnter = (e) => {
-    if (e.key === "Enter" && inputText.trim() !== "") {
-      setTasks([...tasks, { id: tasks.length + 1, text: inputText }]);
-      setInputText("");
-    }
+  // const handleInputEnter = (e) => {
+  //   if (e.key === "Enter" && inputText.trim() !== "") {
+  //     setTasks([...tasks, { id: tasks.length + 1, text: inputText }]);
+  //     setInputText("");
+  //   }
+  // };
+
+  
+  const handleInputEnter = async (e) => {
+    // if (e.key === "Enter" && inputText.trim() !== "") {
+    //   // Обновление состояния локальных задач
+    //   setTasks([...tasks, { id: tasks.length + 1, text: inputText }]);
+     
+  
+      // Создание объекта данных для отправки на сервер
+      const requestData = {
+        user_id: 1, // Замените на реальное значение
+        task_name: inputText,
+        task_description: "Описание задачи - test 1 ", // Замените на реальное значение
+        task_status: 1, // Замените на реальное значение
+        type_id: 1 // Замените на реальное значение
+      };
+      var url = "http://macbook-air-vlad.local/react-task/inputdata.php";
+      var headers = {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      };
+      fetch(url,{
+        method:"POST",
+        headers:headers,
+        body:JSON.stringify(requestData),
+      }).then((response) => response.json())
+        .then((response)=>{
+          alert(response[0].result);
+        })
+
+        // Отправка данных на сервер
+        // const response =  fetch(url, {
+        //   method: "POST",
+        //   headers: headers,
+        //   body: JSON.stringify(requestData),
+        // });
+  
+
+
+        // if (response.ok) {
+        //   const data = response.json();
+        //   // Обработка ответа от сервера
+        //   console.log(data);
+        //   // Дополнительная логика в зависимости от ответа сервера
+        //   if (data.result === "Данные успешно внесены в таблицу") {
+        //     alert("True");
+        //   } else {
+        //     alert("False");
+        //   }
+        // } else {
+        //   console.error("Error:", response.statusText);
+        //   alert("Error");
+        // }
+      // } catch (error) {
+      //   console.error("Error:", error);
+      //   // Логика в случае ошибки при обращении к серверу
+      // }
+    
+    //setInputText("");
   };
+  
 
   return (
     <TaskContentWrap>
