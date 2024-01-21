@@ -9,12 +9,14 @@ import {
 } from "react-router-dom";
 import Root from './components/Router/root';
 import ErrorPage from '../src/components/Router/errorPage'
-//import SandBoxButton from "../src/components/button/sandBoxButton";
 import LoginForm from "../src/layout/components/loginForm/loginform";
-// import Registration from './layout/components/loginForm/registration/registration';
 import TaskManager from './layout/components/taskManager/taskManager';
 import Calendar from './layout/components/taskManager/calendar/calendar';
-import TaskContent from './layout/components/taskManager/taskContent/taskContent';
+import TaskToday from './layout/components/taskManager/taskComponents/taskToday';
+import TaskNestSevenDay from './layout/components/taskManager/taskComponents/taskNestSevenDay';
+import Inbox from './layout/components/taskManager/taskComponents/Inbox';
+import Completed from './layout/components/taskManager/taskComponents/completed';
+import Trash from './layout/components/taskManager/taskComponents/trash';
 const router  = createBrowserRouter([
   {
     path:"/",
@@ -41,8 +43,25 @@ const router  = createBrowserRouter([
           element:<TaskManager/>,
           children:[{
             path:"today",
-            element:<TaskContent/>
-          },]
+            element:<TaskToday/>
+          },
+          {
+            path:"nextseven",
+            element:<TaskNestSevenDay/>
+          },
+          {
+            path:"inbox",
+            element:<Inbox/>
+          },
+          {
+            path:"completed",
+            element:<Completed/>
+          },
+          {
+            path:"trash",
+            element:<Trash/>
+          }
+          ,]
       },
       {
         path:"calendar",

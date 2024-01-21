@@ -23,8 +23,8 @@ const MainWrap = styled.div`
 const NavigatorItemWrap = styled.div`
   width: 60px;
   height: 100vh;
-  border: 3px solid black;
-  background-color: #e0dede;
+  ${'' /* border: 3px solid black; */}
+  background-color: #F8F8F8;
   padding: 5px;
   display:flex;
   flex-direction:column;

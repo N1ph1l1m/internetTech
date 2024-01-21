@@ -56,7 +56,7 @@ const DropDownContent = styled.div`
 const OutletWrap = styled.div`
 width:100vw;
 height:100vh;
-border:3px solid green;
+${'' /* border:3px solid green; */}
 `
 
 function TaskNavItem() {
@@ -76,7 +76,7 @@ function TaskNavItem() {
    
 
         <Button className="taskNav">
-        <Link className="textLink" to={"today"}>
+        <Link className="textLink" to={"nextseven"}>
         <Icon>
             <BsCalendar2Day size="20" />
           </Icon>
@@ -86,7 +86,7 @@ function TaskNavItem() {
         </Button>
 
         <Button className="taskNav">
-        <Link className="textLink" to={"today"}>
+        <Link className="textLink" to={"inbox"}>
         <Icon>
             <IoIosMail size="20" />
           </Icon>
@@ -99,7 +99,7 @@ function TaskNavItem() {
 
       <TaskList>
         <DropDown
-          text="List"
+          text="Work"
           components={
             <DropDownContent>
               <p>Text</p>
@@ -108,13 +108,13 @@ function TaskNavItem() {
           }
         />
 
-        <DropDown text="List" components={<DropDownContent />} />
+        <DropDown text="My tasks" components={<DropDownContent />} />
         <BorderBotton />
       </TaskList>
 
           <TaskNav>
           <Button className="taskNav">
-          <Link className="textLink" to={"today"}>
+          <Link className="textLink" to={"completed"}>
           <Icon>
             <RiTaskLine size="20"/>
           </Icon>
@@ -123,7 +123,7 @@ function TaskNavItem() {
         </Button>
 
         <Button className="taskNav">
-        <Link className="textLink" to={"today"}>
+        <Link className="textLink" to={"trash"}>
           <Icon>
             <FaTrash size="20"/>
           </Icon>
