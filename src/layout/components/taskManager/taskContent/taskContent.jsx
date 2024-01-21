@@ -6,22 +6,23 @@ import { CgMoveTask } from "react-icons/cg";
 import TaskContentText from "./taskContentText";
 import Input from "../../../../components/input/input";
 import Icon from "../../../../components/icon/icon";
+import { MdOutlineAddTask } from "react-icons/md";
 
 const TaskContentWrap = styled.div`
-  width: 60vw;
+  width: 95%;
   height: 100vh;
-  border: 1px solid red;
   padding: 15px 20px;
 `;
+
 const TitleTask = styled.span`
   font-size: 21px;
   color: black;
   margin-top: 3px;
 `;
+
 const HeaderTask = styled.div`
   min-width: 545px;
   height: 64px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,8 +32,33 @@ const HeaderTaskTitle = styled.div`
   display: flex;
   align-items: center;
 `;
+
 const HeaderTaskIcons = styled.div``;
+
 function TaskContent(props) {
+  const [tasks, setTasks] = useState([]);
+  const [inputText, setInputText] = useState("");
+
+  const handleInputChange = (e, type) => {
+    switch (type) {
+      case "text":
+        setInputText(e.target.value);
+        
+        if (e.target.value === "") {
+          alert("Input is null");
+        }
+        break;
+      default:
+    }
+  };
+
+  const handleInputEnter = (e) => {
+    if (e.key === "Enter" && inputText.trim() !== "") {
+      setTasks([...tasks, { id: tasks.length + 1, text: inputText }]);
+      setInputText("");
+    }
+  };
+
   return (
     <TaskContentWrap>
       <HeaderTask>
@@ -53,12 +79,19 @@ function TaskContent(props) {
       </HeaderTask>
 
       <Input
+        type="text"
         className="inputTask"
         placeholder="+ Add tast to  'task' , press Enter to save. "
-      />
-      <TaskContentText text="Test" />
-      <TaskContentText />
+        onChange={(e) => handleInputChange(e, "text")}
+        onKeyDown={handleInputEnter}
+        value={inputText}
+      ></Input>
+
+      {tasks.map((task) => (
+        <TaskContentText key={task.id} text={task.text} />
+      ))}
     </TaskContentWrap>
   );
 }
+
 export default TaskContent;

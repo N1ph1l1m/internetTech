@@ -49,17 +49,10 @@
   width: 15px;
   margin-top: 5px;
   margin-right: 10px;
-
-}
-.checkTask:checked{
-  background-color: #2196F3;
 }
 
-.checkTask::before {
-  background-color: white;
 
-}
-
-.checkTask:checked::before {
-  background-color: #2196F3;
+.taskTextContent{
+  width: auto;
+  min-height:50px;
 }
