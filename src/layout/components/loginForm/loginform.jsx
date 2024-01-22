@@ -6,14 +6,14 @@ import styled from "styled-components";
 
 const LoginWrap= styled.div`
 margin:0px auto;
-border:1px solid blue;
+${'' /* border:1px solid blue; */}
 `
 const LoginWrapItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh; /* 100% высоты экрана */
-  border: 3px solid green;
+  ${'' /* border: 3px solid green; */}
 `
 function LoginForm(){
     const [login, setLogin] = useState(false)

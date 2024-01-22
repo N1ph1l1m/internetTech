@@ -6,7 +6,6 @@ import { CgMoveTask } from "react-icons/cg";
 import TaskContentText from "./taskContentText";
 import Input from "../../../../components/input/input";
 import Icon from "../../../../components/icon/icon";
-import { MdOutlineAddTask } from "react-icons/md";
 
 const TaskContentWrap = styled.div`
   width: 95%;
@@ -53,42 +52,48 @@ function TaskContent(props) {
     }
   };
 
-  // const handleInputEnter = (e) => {
-  //   if (e.key === "Enter" && inputText.trim() !== "") {
-  //     setTasks([...tasks, { id: tasks.length + 1, text: inputText }]);
-  //     setInputText("");
-  //   }
-  // };
+  const handleInputEnter = (e) => {
+    if (e.key === "Enter" && inputText.trim() !== "") {
+      const newTask = { id: tasks.length + 1, text: inputText };
+
+      // Вызов функции обратного вызова для передачи данных в родительский компонент
+      props.onTaskAdd(newTask);
+
+      // Обновление состояния компонента TaskContent
+      setTasks([...tasks, newTask]);
+      setInputText("");
+    }
+  };
 
   
-  const  handleInputEnter = (e)=>{
-    if (e.key === "Enter" && inputText.trim() !== "") {
-      var url = "http://macbook-air-vlad.local/react-task/inputdata.php";
-      var headers = {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      };
-      var Data = {
-        task_name: inputText,
-      };
-      fetch(url,{
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify(Data),
-      })
-        .then((response) => response.json())
-        .then((response)=>{
-          console.log(response[0].result);
-        })
-        .catch((err)=>{
-          console.log(err);
+  // const  handleInputEnter = (e)=>{
+  //   if (e.key === "Enter" && inputText.trim() !== "") {
+  //     var url = "http://macbook-air-vlad.local/react-task/inputdata.php";
+  //     var headers = {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json",
+  //     };
+  //     var Data = {
+  //       task_name: inputText,
+  //     };
+  //     fetch(url,{
+  //       method: "POST",
+  //       headers: headers,
+  //       body: JSON.stringify(Data),
+  //     })
+  //       .then((response) => response.json())
+  //       .then((response)=>{
+  //         console.log(response[0].result);
+  //       })
+  //       .catch((err)=>{
+  //         console.log(err);
            
-        });
-        setInputText("");
-    }
+  //       });
+  //       setInputText("");
+  //   }
   
       
-  };
+  // };
   
 
   return (
@@ -119,7 +124,7 @@ function TaskContent(props) {
         value={inputText}
       ></Input>
 
-      {tasks.map((task) => (
+      {props.tasks.map((task) => (
         <TaskContentText key={task.id} text={task.text} />
       ))}
     </TaskContentWrap>
