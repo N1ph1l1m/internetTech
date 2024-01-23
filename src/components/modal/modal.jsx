@@ -2,6 +2,7 @@ import React from "react";
 // import styled from "styled-components";
  import Portal  from "./portal";
 import PropTypes from 'prop-types';
+import { MdOutlineCancel } from "react-icons/md";
 
 import './modal.css';
 import Icon from "../icon/icon";
@@ -23,7 +24,9 @@ const Modal = ({
 
                 <div className="modalHeader">
                 <div className="modalTitle">{title}</div>
-                <Icon name="times" onClick={onCancel}/>
+                <Icon  onClick={onCancel}>
+                <MdOutlineCancel  size="20"/>
+                </Icon>
                 </div>
                 <div className="modalBody">
                     {children}

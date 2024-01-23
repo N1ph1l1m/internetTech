@@ -3,11 +3,11 @@ import TaskContent from '../taskContent/taskContent';
 
 function  TaskToday() {
     const [parentTasks, setParentTasks] = useState([
-        { id: 1, text: "Create design" },
-        { id: 2, text: "Schedule meeting with team" },
-        { id: 3, text: "Prepare presentation slides" },
-        { id: 4, text: "Review project milestones" },
-        { id: 5, text: "Submit project documentation" },
+        { id: 1, text: "Create design",checked:true },
+        { id: 2, text: "Schedule meeting with team",checked:false },
+        { id: 3, text: "Prepare presentation slides",checked:true },
+        { id: 4, text: "Review project milestones",checked:false },
+        { id: 5, text: "Submit project documentation" , checked:true},
     ]);
 
     const handleTaskAdd = (task) => {
@@ -15,7 +15,8 @@ function  TaskToday() {
       };
 
     return (
-        <TaskContent title="Work" tasks={parentTasks} onTaskAdd={handleTaskAdd} />
+        <TaskContent title="Work" tasks={parentTasks} onTaskAdd={handleTaskAdd} isChecked={parentTasks.checked} />
+
     );
 };
 

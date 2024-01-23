@@ -84,7 +84,7 @@ function TaskContentText(props) {
           type="checkbox"
         />
         <ContentTextItem onClick={handleModal}>
-          <ContentText checked={isChecked}>
+          <ContentText checked={props.isChecked}>
             {props.text}
             {showTxt}
           </ContentText>

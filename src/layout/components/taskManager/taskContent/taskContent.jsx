@@ -125,7 +125,7 @@ function TaskContent(props) {
       ></Input>
 
       {props.tasks.map((task) => (
-        <TaskContentText key={task.id} text={task.text} />
+        <TaskContentText key={task.id} text={task.text} isChecked={task.checked} />
       ))}
     </TaskContentWrap>
   );
