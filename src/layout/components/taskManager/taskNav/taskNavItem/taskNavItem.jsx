@@ -55,6 +55,11 @@ const OutletWrap = styled.div`
   width: 100vw;
   height: 100vh;
 `;
+const OutletItem = styled.div`
+  width: 95%;
+  height: 100vh;
+  padding: 15px 20px;
+  `
 
 function TaskNavItem() {
   return (
@@ -131,7 +136,9 @@ function TaskNavItem() {
         </TaskNav>
       </TaskItemWrap>
       <OutletWrap>
-        <Outlet />
+              <OutletItem>
+              <Outlet />
+              </OutletItem>
       </OutletWrap>
     </MainWrap>
   );

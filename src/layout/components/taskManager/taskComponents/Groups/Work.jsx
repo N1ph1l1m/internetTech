@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import TaskContent from '../../taskContent/taskContent';
+import HeaderTask from '../../taskContent/headerTask/headerTask';
 
 function Work(){
     const [parentTasks, setParentTasks] = useState([
@@ -15,7 +16,10 @@ function Work(){
       };
 
     return (
-        <TaskContent title="Work" tasks={parentTasks} onTaskAdd={handleTaskAdd} />
+        <>
+        <HeaderTask title="Work"/>
+        <TaskContent  tasks={parentTasks} onTaskAdd={handleTaskAdd} />
+        </> 
     );
 };
 

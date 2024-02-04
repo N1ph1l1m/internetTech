@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import TaskContent from "../taskContent/taskContent";
+import HeaderTask from "../taskContent/headerTask/headerTask";
+
 
 function Inbox() {
   const [parentTasks, setParentTasks] = useState([
@@ -30,7 +32,11 @@ function Inbox() {
   };
 
   return (
-    <TaskContent title="Work" tasks={parentTasks} onTaskAdd={handleTaskAdd} />
+  <>
+    <HeaderTask title="Inbox"/>
+    <TaskContent  tasks={parentTasks} onTaskAdd={handleTaskAdd} />
+  </>
+
   );
 }
 

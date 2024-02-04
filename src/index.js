@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -13,7 +12,7 @@ import LoginForm from "../src/layout/components/loginForm/loginform";
 import TaskManager from './layout/components/taskManager/taskManager';
 import Calendar from './layout/components/taskManager/calendar/calendar';
 import TaskToday from './layout/components/taskManager/taskComponents/taskToday';
-import TaskNestSevenDay from './layout/components/taskManager/taskComponents/taskNestSevenDay';
+import TaskNextSevenDay from './layout/components/taskManager/taskComponents/taskNextSevenDay';
 import Inbox from './layout/components/taskManager/taskComponents/Inbox';
 import Completed from './layout/components/taskManager/taskComponents/completed';
 import Trash from './layout/components/taskManager/taskComponents/trash';
@@ -49,7 +48,7 @@ const router  = createBrowserRouter([
           },
           {
             path:"nextseven",
-            element:<TaskNestSevenDay/>
+            element:<TaskNextSevenDay/>
           },
           {
             path:"inbox",
@@ -69,7 +68,7 @@ const router  = createBrowserRouter([
           },
           {
             path:"trash",
-            element:<Trash title="Trash"/>
+            element:<Trash/>
           }
           ,]
       },

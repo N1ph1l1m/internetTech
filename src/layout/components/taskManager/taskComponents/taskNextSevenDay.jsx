@@ -1,5 +1,6 @@
 import React , {useState}from 'react';
 import TaskContent from '../taskContent/taskContent';
+import HeaderTask from '../taskContent/headerTask/headerTask';
 
 function TaskNestSevenDay(){
     const [parentTasks, setParentTasks] = useState([
@@ -15,7 +16,10 @@ function TaskNestSevenDay(){
       };
 
     return (
-        <TaskContent title="Next 7 day" tasks={parentTasks} onTaskAdd={handleTaskAdd} />
+        <>
+        <HeaderTask title="Next 7 day"/>
+        <TaskContent  tasks={parentTasks} onTaskAdd={handleTaskAdd} />
+        </>
     );
 };
 

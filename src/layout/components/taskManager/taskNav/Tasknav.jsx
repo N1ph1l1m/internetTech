@@ -1,5 +1,5 @@
 import React from "react";
-import NavigatorItem from "./taskNavItem/taskNavItem";
+import TaskNavItem from "./taskNavItem/taskNavItem";
 import './navigator.css'
 import styled from "styled-components";
 
@@ -17,7 +17,7 @@ function TaskNav(){
 
     return(
     <NavigatorWrap>
-        <NavigatorItem/>
+        <TaskNavItem/>
     </NavigatorWrap>
     )
 }
