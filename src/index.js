@@ -18,69 +18,44 @@ import Completed from './layout/components/taskManager/taskComponents/completed'
 import Trash from './layout/components/taskManager/taskComponents/trash';
 import Work from './layout/components/taskManager/taskComponents/Groups/Work';
 import Mytasks from './layout/components/taskManager/taskComponents/Groups/MyTasks';
+import PrivateRouter from './components/utils/router/privateRouter';
 const router  = createBrowserRouter([
   {
-    path:"/",
-    element:<LoginForm/>,
-    errorElement:<ErrorPage/>,
-    children:[
-      // {
-      //     path:"/task",
-      //     element:<TaskManager/>
-      // },
-    //   {
-    //     path:"/login",
-    //     element:<LoginForm/>
-    // },
-    ]
+    path:"/login",
+    element:<LoginForm />,
+    errorElement:<ErrorPage/>
   },
   {
-    path:"/task",
-    element:<Root/>,
-    errorElement:<ErrorPage/>,
-    children:[
+    path:"/",
+    element: <PrivateRouter />,  // Оборачиваем защищенные маршруты
+    children: [
       {
-          path:"taskmanager/",
-          element:<TaskManager/>,
-          children:[{
-            path:"today",
-            element:<TaskToday/>
+        path: "/task",
+        element: <Root />,
+        errorElement:<ErrorPage/>,
+        children: [
+          {
+            path: "taskmanager",
+            element: <TaskManager />,
+            children: [
+              { path: "today", element: <TaskToday /> },
+              { path: "nextseven", element: <TaskNextSevenDay /> },
+              { path: "inbox", element: <Inbox /> },
+              { path: "work", element: <Work /> },
+              { path: "mytask", element: <Mytasks /> },
+              { path: "completed", element: <Completed /> },
+              { path: "trash", element: <Trash /> }
+            ]
           },
           {
-            path:"nextseven",
-            element:<TaskNextSevenDay/>
-          },
-          {
-            path:"inbox",
-            element:<Inbox/>
-          },
-          {
-            path:"work",
-            element:<Work/>
-          },
-          {
-            path:"mytask",
-            element:<Mytasks/>
-          },
-          {
-            path:"completed",
-            element:<Completed/>
-          },
-          {
-            path:"trash",
-            element:<Trash/>
+            path: "calendar",
+            element: <Calendar />
           }
-          ,]
-      },
-      {
-        path:"calendar",
-        element:<Calendar/>
-    },
-
+        ]
+      }
     ]
   },
-
-  ])
+]);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

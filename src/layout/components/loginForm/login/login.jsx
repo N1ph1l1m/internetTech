@@ -105,7 +105,7 @@ function Login(props){
                       // Перенаправление на страницу задач
                       setTimeout(() => {
                           history("/task");
-                      }, 2000);
+                      }, 1000);
                   } else {
                       setError("Login failed: " + response.data.detail);
                   }

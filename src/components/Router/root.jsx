@@ -10,6 +10,8 @@ import { RiTaskFill , } from "react-icons/ri";
 import { FaUser, FaCalendarAlt , FaSearch ,FaSyncAlt } from "react-icons/fa";
 import { ImExit } from "react-icons/im";
 import "../../../src/index.css";
+// import PrivateRouter from "../utils/router/privateRouter";
+// import { checkPropTypes } from "prop-types";
 const OutletWRap = styled.div`
   width: 100vw;
   height: 100vh;
@@ -39,8 +41,6 @@ margin-top: auto;
 
 function Root() {
   const history = useNavigate();
-
-
 
 //   function logOut() {
 //     var data = {
@@ -115,7 +115,6 @@ function logOut() {
   });
 }
 
-
   return (
     <MainWrap>
       <NavigatorItemWrap>
@@ -128,7 +127,7 @@ function logOut() {
 
 
         <Button className="newColor">
-          <Link className="colorLink" to={"taskmanager"}>
+          <Link className="colorLink" to= {"taskmanager"}>
             <Icon> <RiTaskFill size={20}/></Icon>
           </Link>
         </Button>
