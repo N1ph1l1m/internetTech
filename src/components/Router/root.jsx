@@ -104,7 +104,7 @@ function logOut() {
 
           console.log("Logout successful!");
           // Перенаправление на страницу входа
-          history("/");
+          history("/login");
       } else {
           console.log("Logout failed.");
       }
@@ -120,7 +120,7 @@ function logOut() {
       <NavigatorItemWrap>
 
       <Button className="newColor">
-          <Link className="colorLink" to={"taskmanager"}>
+          <Link className="colorLink" to={"user"}>
             <Icon> <FaUser size={20}/></Icon>
           </Link>
         </Button>
@@ -138,7 +138,7 @@ function logOut() {
           </Link>
         </Button>
         <Button className="newColor">
-          <Link className="colorLink" to={""}>
+          <Link className="colorLink" to={"search"}>
           <Icon><FaSearch size={20}/></Icon>
           </Link>
         </Button>

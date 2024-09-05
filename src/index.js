@@ -19,6 +19,7 @@ import Trash from './layout/components/taskManager/taskComponents/trash';
 import Work from './layout/components/taskManager/taskComponents/Groups/Work';
 import Mytasks from './layout/components/taskManager/taskComponents/Groups/MyTasks';
 import PrivateRouter from './components/utils/router/privateRouter';
+import SearchPanel from './layout/components/taskManager/searchPanel/searchPanel';
 const router  = createBrowserRouter([
   {
     path:"/login",
@@ -26,7 +27,7 @@ const router  = createBrowserRouter([
     errorElement:<ErrorPage/>
   },
   {
-    path:"/",
+    pathsdfdsf:"/",
     element: <PrivateRouter />,  // Оборачиваем защищенные маршруты
     children: [
       {
@@ -50,7 +51,11 @@ const router  = createBrowserRouter([
           {
             path: "calendar",
             element: <Calendar />
-          }
+          },
+          {
+            path: "search",
+            element:<SearchPanel/>
+          },
         ]
       }
     ]
